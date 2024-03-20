@@ -15,10 +15,14 @@ vim.api.nvim_create_autocmd({ 'BufNew', 'BufEnter' }, {
   end,
 })
 
-print 'setting up treesitter'
-vim.treesitter.language.register('lua', 'p8')
-vim.treesitter.language.register('lua', 'pico8')
-print 'done setting up treesitter'
-
-vim.filetype.add { extension = { p8 = 'pico8' } }
-return {}
+-- vim.treesitter.language.register('lua', 'p8')
+-- vim.treesitter.language.register('lua', 'pico8')
+-- vim.filetype.add { extension = { p8 = 'pico8' } }
+return {
+  'bakudankun/pico-8.vim',
+  version = '*',
+  ft = 'pico8',
+  init = function()
+    print 'init pico-8 syntax highlighting'
+  end,
+}
