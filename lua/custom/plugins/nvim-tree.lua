@@ -1,7 +1,3 @@
--- recommended settings from nvim-tree documentation
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- You can add your own plugins here or in other files in this directory!
 --  I promise not to create any merge conflicts in this directory :)
 --
@@ -17,6 +13,13 @@ return {
     config = function()
       require('nvim-tree').setup {}
       -- configure nvim-tree
+
+      -- disable netrw at the very start of your init.lua
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      -- optionally enable 24-bit colour
+      vim.opt.termguicolors = true
 
       -- open nvim-tree on setup
       local function open_nvim_tree(data)
