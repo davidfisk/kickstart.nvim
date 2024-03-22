@@ -360,6 +360,7 @@ require('lazy').setup({
         defaults = {
           file_ignore_patterns = {
             'node_modules',
+            '.git',
           },
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
@@ -627,10 +628,11 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true, p8 = true, pico8 = true }
+        -- local disable_filetypes = { c = true, cpp = true }
         return {
-          timeout_ms = 5000,
-          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+          timeout_ms = 500,
+          -- lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+          lsp_fallback = true,
         }
       end,
       formatters_by_ft = {
