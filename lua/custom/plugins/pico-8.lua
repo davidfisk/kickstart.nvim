@@ -14,13 +14,15 @@ vim.api.nvim_create_autocmd({ 'BufNew', 'BufEnter' }, {
     }
   end,
 })
-
--- vim.treesitter.language.register('lua', 'p8')
--- vim.treesitter.language.register('lua', 'pico8')
--- vim.filetype.add { extension = { p8 = 'pico8' } }
+vim.g.pico8_config = {
+  imitate_console = 0,
+  -- use_keymap = 0,
+}
+-- use local version as when i use the remote git version for some reason the indents on pico 8 "shorthand if" does not work as expected, even though code should be identical. must be some lazy quirk.
+-- I would rather fetch this plugin via lazy so figure this out someday.
 return {
-  'bakudankun/pico-8.vim',
-  version = '*',
+  -- 'Bakudankun/PICO-8.vim',
+  dir = '~/src/nvim/PICO-8.vim',
   ft = 'pico8',
   init = function()
     print 'init pico-8 syntax highlighting'
