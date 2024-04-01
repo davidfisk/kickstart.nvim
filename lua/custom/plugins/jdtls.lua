@@ -1,3 +1,5 @@
+-- https://sookocheff.com/post/vim/neovim-java-ide/
+
 -- return {
 --   'mfussenegger/nvim-jdtls',
 --   opts = {
