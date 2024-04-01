@@ -585,8 +585,8 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
+        tsserver = {},
+        -- TODO configure lombok
 
         lua_ls = {
           -- cmd = {...},
@@ -627,8 +627,8 @@ require('lazy').setup({
         'java-debug-adapter',
         'stylua', -- Used to format Lua code
         'quick_lint_js',
-        -- 'tsserver', -- Used to format javascript
-        'vtsls',
+        'tsserver', -- Used to format javascript
+        -- 'vtsls',
         'biome',
         'pylsp',
         'dockerls',
@@ -855,9 +855,9 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
+        additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript' } },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
