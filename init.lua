@@ -441,6 +441,7 @@ require('lazy').setup({
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/neodev.nvim', opts = {} },
+      'mfussenegger/nvim-jdtls',
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -542,6 +543,18 @@ require('lazy').setup({
               callback = vim.lsp.buf.clear_references,
             })
           end
+          -- get this working someday: https://github.com/LazyVim/LazyVim/discussions/275
+          -- if client.name == "jdtls" then
+          --   local jdtls = require("jdtls")
+          --   jdtls.setup_dap({ hotcodereplace = "auto" })
+          --   jdtls.setup.add_commands()
+          --   -- Auto-detect main and setup dap config
+          --   require("jdtls.dap").setup_dap_main_class_configs({
+          --     config_overrides = {
+          --       -- vmArgs = "-Dspring.profiles.active=local",
+          --     },
+          --   })
+          -- end
         end,
       })
 
@@ -586,8 +599,7 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
-        -- TODO configure lombok
-
+        jdtls = {},
         lua_ls = {
           -- cmd = {...},
           filetypes = { 'lua' },
@@ -707,6 +719,7 @@ require('lazy').setup({
           },
         },
       },
+      'heavenshell/vim-jsdoc',
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds other completion capabilities.
