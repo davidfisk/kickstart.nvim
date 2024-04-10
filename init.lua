@@ -441,7 +441,6 @@ require('lazy').setup({
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/neodev.nvim', opts = {} },
-      'mfussenegger/nvim-jdtls',
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -578,6 +577,9 @@ require('lazy').setup({
       }
       -- end add borders
 
+      -- nvim java support: https://github.com/nvim-java/nvim-java
+      require('java').setup()
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -598,8 +600,8 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
         jdtls = {},
+        tsserver = {},
         lua_ls = {
           -- cmd = {...},
           filetypes = { 'lua' },
@@ -812,7 +814,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'gruvbox'
 
       -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
 
