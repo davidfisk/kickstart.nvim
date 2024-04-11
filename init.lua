@@ -602,6 +602,8 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         jdtls = {},
         tsserver = {},
+        phpactor = {},
+        intelephense = {},
         lua_ls = {
           -- cmd = {...},
           filetypes = { 'lua' },
@@ -647,6 +649,7 @@ require('lazy').setup({
         'pylsp',
         'dockerls',
         'docker_compose_language_service',
+        'phpactor',
         'intelephense',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -862,7 +865,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript', 'php' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

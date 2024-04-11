@@ -1,3 +1,12 @@
+# david's kickstart.nvim
+
+## Requirements
+
+for phpactor LSP:
+```bash
+brew install composer
+```
+
 # kickstart.nvim
 
 ## Introduction
