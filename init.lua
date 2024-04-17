@@ -604,6 +604,7 @@ require('lazy').setup({
         tsserver = {},
         phpactor = {},
         intelephense = {},
+        clangd = {},
         lua_ls = {
           -- cmd = {...},
           filetypes = { 'lua' },
@@ -651,6 +652,7 @@ require('lazy').setup({
         'docker_compose_language_service',
         'phpactor',
         'intelephense',
+        'clangd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -808,14 +810,14 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     -- 'folke/tokyonight.nvim',
-    'ellisonleao/gruvbox.nvim',
+    'sainnhe/gruvbox-material',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'gruvbox'
-
+      vim.g.gruvbox_material_background = 'hard'
+      vim.cmd.colorscheme 'gruvbox-material'
       -- You can configure highlights by doing something like:
       -- vim.cmd.hi 'Comment gui=none'
     end,
