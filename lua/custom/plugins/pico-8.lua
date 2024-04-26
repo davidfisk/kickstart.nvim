@@ -5,8 +5,8 @@ end
 -- use local version as when i use the remote git version for some reason the indents on pico 8 "shorthand if" does not work as expected, even though code should be identical. must be some lazy quirk.
 -- I would rather fetch this plugin via lazy so figure this out someday.
 return {
-  -- 'Bakudankun/PICO-8.vim',
-  dir = '~/src/nvim/PICO-8.vim',
+  'Bakudankun/PICO-8.vim',
+  --  dir = '~/src/nvim/PICO-8.vim',
   ft = 'pico8',
   init = function()
     -- print 'init pico-8 syntax highlighting'
