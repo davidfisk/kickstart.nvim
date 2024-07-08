@@ -160,6 +160,9 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
+-- disable wrapping
+vim.opt.wrap = false
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -367,6 +370,8 @@ require('lazy').setup({
           file_ignore_patterns = {
             'node_modules',
             '.git',
+            '.class', -- I don't want to see java compiled files
+            'target/*', -- I don't want java build files searched
           },
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
@@ -600,7 +605,17 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        jdtls = {},
+        --
+        -- TODO disable jdtls formatting for now - reenable when I can
+        jdtls = {
+          settings = {
+            java = {
+              format = {
+                enabled = false,
+              },
+            },
+          },
+        },
         tsserver = {},
         phpactor = {},
         intelephense = {},
@@ -643,7 +658,7 @@ require('lazy').setup({
         'jdtls',
         'java-debug-adapter',
         'stylua', -- Used to format Lua code
-        'quick_lint_js',
+        -- 'quick_lint_js',
         'tsserver', -- Used to format javascript
         -- 'vtsls',
         'biome',
@@ -747,7 +762,7 @@ require('lazy').setup({
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        completion = { completeopt = 'menu,menuone,preview,noinsert' },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
