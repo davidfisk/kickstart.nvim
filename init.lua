@@ -160,8 +160,8 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
--- disable wrapping
-vim.opt.wrap = false
+-- disable/enable line wrapping
+vim.opt.wrap = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -203,7 +203,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>', { desc = 'Open [N]vimTree' })
 
 -- tabs
-vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = '[T]ab [O]pen' })
+vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = '[T]ab [O]pen New' })
 vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = '[T]ab [C]lose' })
 vim.keymap.set('n', '<leader>tn', ':tabn<CR>', { desc = '[T]ab [N]ext' })
 vim.keymap.set('n', '<leader>tp', ':tabp<CR>', { desc = '[T]ab [P]revious' })
@@ -447,9 +447,19 @@ require('lazy').setup({
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/neodev.nvim', opts = {} },
+
+      -- java (must be loaded before nvim-lspconfig so it is not in plugins dir)
+      {
+        'nvim-java/nvim-java',
+        opts = {
+          lombok = {
+            enable = true,
+          },
+        },
+      },
     },
     config = function()
-      -- Brief aside: **What is LSP?**
+      -- Brief asie: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
       --
@@ -548,18 +558,6 @@ require('lazy').setup({
               callback = vim.lsp.buf.clear_references,
             })
           end
-          -- get this working someday: https://github.com/LazyVim/LazyVim/discussions/275
-          -- if client.name == "jdtls" then
-          --   local jdtls = require("jdtls")
-          --   jdtls.setup_dap({ hotcodereplace = "auto" })
-          --   jdtls.setup.add_commands()
-          --   -- Auto-detect main and setup dap config
-          --   require("jdtls.dap").setup_dap_main_class_configs({
-          --     config_overrides = {
-          --       -- vmArgs = "-Dspring.profiles.active=local",
-          --     },
-          --   })
-          -- end
         end,
       })
 
@@ -582,9 +580,6 @@ require('lazy').setup({
         float = { border = _border },
       }
       -- end add borders
-
-      -- nvim java support: https://github.com/nvim-java/nvim-java
-      -- require('java').setup()
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -617,7 +612,7 @@ require('lazy').setup({
             },
           },
         },
-        tsserver = {},
+        -- tsserver = {},
         phpactor = {},
         intelephense = {},
         clangd = {},
@@ -656,11 +651,9 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'jdtls',
-        'java-debug-adapter',
         'stylua', -- Used to format Lua code
         -- 'quick_lint_js',
-        'tsserver', -- Used to format javascript
+        -- 'tsserver', -- Used to format javascript
         -- 'vtsls',
         'biome',
         'pylsp',
