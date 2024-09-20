@@ -371,6 +371,7 @@ require('lazy').setup({
           file_ignore_patterns = {
             'node_modules',
             '.git',
+            'gh.*log',
             '.class', -- I don't want to see java compiled files
             'target/*', -- I don't want java build files searched
           },
@@ -451,8 +452,12 @@ require('lazy').setup({
       -- java (must be loaded before nvim-lspconfig so it is not in plugins dir)
       {
         'nvim-java/nvim-java',
+        lazy = true,
         opts = {
           lombok = {
+            enable = true,
+          },
+          spring_boot_tools = {
             enable = true,
           },
         },
@@ -607,7 +612,7 @@ require('lazy').setup({
           settings = {
             java = {
               format = {
-                enabled = false,
+                enabled = true,
               },
             },
           },
