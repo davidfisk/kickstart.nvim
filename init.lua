@@ -617,7 +617,7 @@ require('lazy').setup({
             },
           },
         },
-        -- tsserver = {},
+        ts_ls = {},
         phpactor = {},
         intelephense = {},
         clangd = {},
@@ -658,7 +658,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         -- 'quick_lint_js',
-        -- 'tsserver', -- Used to format javascript
+        'ts_ls', -- Used to format javascript
         -- 'vtsls',
         'biome',
         'pylsp',
@@ -824,16 +824,51 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     -- 'folke/tokyonight.nvim',
-    'sainnhe/gruvbox-material',
+    -- 'sainnhe/gruvbox-material',
+    'catppuccin/nvim',
+    name = 'catppucin',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
+      vim.cmd.colorscheme 'catppuccin-mocha'
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.g.gruvbox_material_background = 'hard'
-      vim.cmd.colorscheme 'gruvbox-material'
+      -- vim.g.gruvbox_material_background = 'hard'
+      -- vim.cmd.colorscheme 'gruvbox-material'
       -- You can configure highlights by doing something like:
       -- vim.cmd.hi 'Comment gui=none'
+    end,
+    config = function()
+      require('catppuccin').setup {
+        no_italic = true,
+        term_colors = true,
+        transparent_background = false,
+        styles = {
+          comments = {},
+          conditionals = {},
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+        },
+        color_overrides = {
+          mocha = {
+            base = '#111111',
+            mantle = '#222222',
+            crust = '#333333',
+          },
+        },
+        integrations = {
+          telescope = {
+            enabled = true,
+          },
+        },
+      }
     end,
   },
 
