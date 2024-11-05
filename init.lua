@@ -617,7 +617,7 @@ require('lazy').setup({
           settings = {
             java = {
               format = {
-                enabled = true,
+                enabled = false,
               },
             },
           },
@@ -921,7 +921,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript', 'php' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript', 'php', 'http' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -931,7 +931,7 @@ require('lazy').setup({
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript', 'pico8' },
       },
-      indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8' } },
+      indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8', 'java' } },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
