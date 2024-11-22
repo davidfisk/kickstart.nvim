@@ -11,15 +11,27 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('nvim-tree').setup {}
+      require('nvim-tree').setup {
+        disable_netrw = true,
+        view = {
+          adaptive_size = true,
+          float = {
+            enable = true,
+          },
+        },
+        actions = {
+          open_file = {
+            quit_on_open = true,
+          },
+        },
+      }
       -- configure nvim-tree
-
-      -- disable netrw at the very start of your init.lua
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-
       -- optionally enable 24-bit colour
       vim.opt.termguicolors = true
+
+      -- setup keymaps
+      vim.keymap.set('n', '<leader>nn', ':NvimTreeToggle<CR>', { desc = 'Ope[n] [N]vimTree' })
+      vim.keymap.set('n', '<leader>nf', ':NvimTreeFindFile<CR>', { desc = '[N]vimTree [F]ind' })
 
       -- open nvim-tree on setup
       local function open_nvim_tree(data)

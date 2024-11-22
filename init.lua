@@ -203,7 +203,6 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- nvimtree
-vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>', { desc = 'Open [N]vimTree' })
 
 -- tabs
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = '[T]ab [O]pen New' })
@@ -620,7 +619,7 @@ require('lazy').setup({
           settings = {
             java = {
               format = {
-                enabled = false,
+                enabled = true,
               },
             },
           },
@@ -756,6 +755,9 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      -- more
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
     },
     config = function()
       -- See `:help cmp`
