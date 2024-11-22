@@ -621,6 +621,8 @@ require('lazy').setup({
               format = {
                 enabled = true,
               },
+              tabSize = 4,
+              insertSpaces = false,
             },
           },
         },
