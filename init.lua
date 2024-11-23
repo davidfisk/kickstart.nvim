@@ -381,6 +381,7 @@ require('lazy').setup({
             'gh.*log',
             '.class', -- I don't want to see java compiled files
             'target/*', -- I don't want java build files searched
+            'lib/*', -- I don't want to search lua project 3rd party lib dirs
           },
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
@@ -615,6 +616,7 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         --
         -- TODO disable jdtls formatting for now - reenable when I can
+        codelldb = {},
         jdtls = {
           settings = {
             java = {
@@ -676,6 +678,7 @@ require('lazy').setup({
         'phpactor',
         'intelephense',
         'clangd',
+        'codelldb',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -928,7 +931,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript', 'php', 'http' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript', 'php', 'http', 'cpp' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
