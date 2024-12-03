@@ -667,7 +667,7 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        -- 'stylua', -- Used to format Lua code
         -- 'quick_lint_js',
         'ts_ls', -- Used to format javascript
         -- 'vtsls',
@@ -679,6 +679,7 @@ require('lazy').setup({
         'intelephense',
         'clangd',
         'codelldb',
+        'lua_ls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -941,7 +942,7 @@ require('lazy').setup({
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript', 'pico8' },
       },
-      indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8', 'java' } },
+      indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8', 'java', 'lua' } },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
