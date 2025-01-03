@@ -1,5 +1,19 @@
 return {
   'rest-nvim/rest.nvim',
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-neotest/nvim-nio",
+    {
+      "vhyrro/luarocks.nvim",
+      opts = {
+        rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }, -- Specify LuaRocks packages to install
+      },
+    },
+  },
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or {}
+    table.insert(opts.ensure_installed, "http")
+  end,
   config = function()
     -- vim.g.rest_nvim = {}
     vim.keymap.set('n', '<leader>rr', ':Rest run<CR>', { desc = '[R]est [R]un' })
