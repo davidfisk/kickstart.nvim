@@ -263,7 +263,7 @@ require('lazy').setup({
   --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',    opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
@@ -298,7 +298,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  {                     -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
@@ -346,7 +346,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -379,9 +379,9 @@ require('lazy').setup({
             'node_modules',
             '.git',
             'gh.*log',
-            '.class',   -- I don't want to see java compiled files
+            '.class', -- I don't want to see java compiled files
             'target/*', -- I don't want java build files searched
-            'lib/*',    -- I don't want to search lua project 3rd party lib dirs
+            'lib/*', -- I don't want to search lua project 3rd party lib dirs
           },
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
@@ -581,7 +581,7 @@ require('lazy').setup({
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-      -- add borders
+      -- add borders to lsp windows
       local _border = 'rounded'
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = _border,
@@ -607,7 +607,7 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -680,6 +680,7 @@ require('lazy').setup({
         'clangd',
         'codelldb',
         'lua_ls',
+        'rust_analyzer',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -764,6 +765,9 @@ require('lazy').setup({
       -- more
       'hrsh7th/cmp-vsnip',
       'hrsh7th/vim-vsnip',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-nvim-lua',
     },
     config = function()
       -- See `:help cmp`
@@ -932,7 +936,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript', 'php', 'http', 'cpp' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'javascript', 'typescript', 'php', 'http', 'cpp', 'rust' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

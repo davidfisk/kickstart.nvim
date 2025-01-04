@@ -1,18 +1,19 @@
 return {
   'rest-nvim/rest.nvim',
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-neotest/nvim-nio",
-    {
-      "vhyrro/luarocks.nvim",
-      opts = {
-        rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }, -- Specify LuaRocks packages to install
-      },
-    },
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-neotest/nvim-nio',
+    -- {
+    --   'vhyrro/luarocks.nvim',
+    --   opts = {
+    --     rocks = { 'lua-curl', 'nvim-nio', 'mimetypes', 'xml2lua' }, -- Specify LuaRocks packages to install
+    --   },
+    -- },
   },
   opts = function(_, opts)
     opts.ensure_installed = opts.ensure_installed or {}
-    table.insert(opts.ensure_installed, "http")
+    table.insert(opts.ensure_installed, 'http')
+    opts.rocks = { 'lua-curl', 'nvim-nio', 'mimetypes', 'xml2lua' }
   end,
   config = function()
     -- vim.g.rest_nvim = {}

@@ -1,5 +1,5 @@
 return {
-  "folke/snacks.nvim",
+  'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
@@ -17,5 +17,13 @@ return {
     statuscolumn = { enabled = true },
     words = { enabled = true },
   },
+  keys = {
+    {
+      '<leader>nh',
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = '[N]otification [H]istory',
+    },
+  },
 }
-

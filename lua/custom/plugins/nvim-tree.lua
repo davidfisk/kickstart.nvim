@@ -81,7 +81,7 @@ return {
           return
         end
 
-        -- change to the directory
+        -- change to the directory:
         if directory then
           vim.cmd.cd(data.file)
         end
@@ -90,7 +90,8 @@ return {
         require('nvim-tree.api').tree.open()
       end
 
-      vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
+      -- NOTE disable vim enter for now
+      -- vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
     end,
   },
 }
