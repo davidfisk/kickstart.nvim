@@ -843,7 +843,7 @@ require('lazy').setup({
       require('catppuccin').setup {
         no_italic = true,
         term_colors = true,
-        transparent_background = false,
+        transparent_background = true,
         styles = {
           comments = {},
           conditionals = {},
@@ -859,9 +859,9 @@ require('lazy').setup({
         },
         color_overrides = {
           mocha = {
-            base = '#111111',
-            mantle = '#222222',
-            crust = '#333333',
+            base = '#050511',
+            mantle = '#050522',
+            crust = '#0000FF',
           },
         },
         integrations = {
