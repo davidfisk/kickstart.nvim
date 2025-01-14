@@ -662,6 +662,7 @@ require('lazy').setup({
         'codelldb',
         'lua_ls',
         'rust_analyzer',
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
