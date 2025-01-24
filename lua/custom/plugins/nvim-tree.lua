@@ -17,7 +17,7 @@ return {
         view = {
           adaptive_size = true,
           float = {
-            enable = true,
+            enable = false,
           },
         },
         actions = {

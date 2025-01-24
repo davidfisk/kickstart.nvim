@@ -8,7 +8,7 @@ return {
         default_direction = 'right',
         min_width = 20,
       },
-      open_automatic = true,
+      open_automatic = false,
       -- optionally use on_attach to set keymaps when aerial has attached to a buffer
       on_attach = function(bufnr)
         -- Jump forwards/backwards with '{' and '}'
@@ -16,7 +16,6 @@ return {
         vim.keymap.set('n', '<leader>a}', '<cmd>AerialNext<CR>', { desc = '[A]erial Previous', buffer = bufnr })
       end,
     }
-    -- You probably also want to set a keymap to toggle aerial
     vim.keymap.set('n', '<leader>aa', '<cmd>AerialToggle!<CR>', { desc = 'Toggle [A]erial' })
   end,
   dependencies = {

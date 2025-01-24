@@ -362,7 +362,7 @@ require('lazy').setup({
             'gh.*log',
             '.class', -- I don't want to see java compiled files
             'target/*', -- I don't want java build files searched
-            'lib/*', -- I don't want to search lua project 3rd party lib dirs
+            -- './lib/*', -- I don't want to search lua project 3rd party lib dirs
           },
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
