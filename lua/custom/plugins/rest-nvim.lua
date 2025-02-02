@@ -1,5 +1,6 @@
 return {
   'rest-nvim/rest.nvim',
+  enabled = true,
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'nvim-neotest/nvim-nio',

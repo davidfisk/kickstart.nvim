@@ -65,8 +65,12 @@ return {
     sidebar_filetypes = {
       NvimTree = true,
     },
+    ui = {
+      icons = {
+        separator = { left = '|', right = '' },
+      },
+    },
     -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
     animation = true,
   },
-  version = '^1.0.0', -- optional: only update when a new 1.x version is released
 }

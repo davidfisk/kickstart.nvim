@@ -12,6 +12,7 @@ return {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
+    animate = { enabled = true, duration = 1000, easing = 'outInExpo' },
     bigfile = { enabled = true },
     dashboard = {
       enabled = true,
@@ -29,6 +30,7 @@ return {
         },
       },
     },
+    dim = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
