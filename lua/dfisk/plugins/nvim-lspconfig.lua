@@ -218,6 +218,7 @@ return { -- LSP Configuration & Plugins
       'lua_ls',
       'rust_analyzer',
       'prettier',
+      'markdownlint',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -232,6 +233,8 @@ return { -- LSP Configuration & Plugins
           require('lspconfig')[server_name].setup(server)
         end,
       },
+      ensure_installed = {},
+      automatic_installation = {},
     }
   end,
 }
