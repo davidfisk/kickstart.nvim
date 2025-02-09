@@ -1,5 +1,6 @@
 return {
   'gelguy/wilder.nvim',
+  enabled = false, -- disabling in place of noice
   config = function()
     -- config goes here
     local wilder = require 'wilder'

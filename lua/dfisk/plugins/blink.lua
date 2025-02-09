@@ -2,8 +2,15 @@ return {
   'saghen/blink.cmp',
   enabled = true,
   -- optional: provides snippets for the snippet source
-  dependencies = 'rafamadriz/friendly-snippets',
-
+  dependencies = {
+    'rafamadriz/friendly-snippets',
+    { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+    'echasnovski/mini.snippets',
+    -- Adds other completion capabilities.
+    --  nvim-cmp does not ship with all sources by default. They are split
+    --  into multiple repos for maintenance purposes.
+    'hrsh7th/vim-vsnip',
+  },
   -- use a release tag to download pre-built binaries
   version = '*',
   -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -14,6 +21,7 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    snippets = { preset = 'luasnip' },
     -- 'default' for mappings similar to built-in completion
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept

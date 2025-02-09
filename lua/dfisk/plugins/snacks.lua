@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd('User', {
     end)
   end,
 })
-
 return {
   {
     'folke/snacks.nvim',
@@ -67,6 +66,10 @@ return {
       indent = { enabled = true },
       input = { enabled = true },
       notifier = { enabled = true },
+      picker = {
+        enabled = true,
+        ui_select = true,
+      },
       quickfile = { enabled = true },
       scroll = { enabled = true },
       statuscolumn = { enabled = true },
@@ -103,11 +106,11 @@ return {
         desc = 'Command History',
       },
       {
-        '<leader>n',
+        '<leader>nh',
         function()
           Snacks.picker.notifications()
         end,
-        desc = 'Notification History',
+        desc = '[N]otification [H]istory',
       },
       {
         '<leader>e',
