@@ -31,6 +31,7 @@ return {
       -- refer to the configuration section below
       animate = { enabled = true, duration = 20, easing = 'outInExpo' },
       bigfile = { enabled = true },
+      bufdelete = { enabled = true },
       dashboard = {
         enabled = true,
         preset = {
@@ -440,6 +441,20 @@ return {
           Snacks.picker.lsp_workspace_symbols()
         end,
         desc = 'LSP Workspace Symbols',
+      },
+      {
+        '<leader>ie',
+        function()
+          Snacks.dim()
+        end,
+        desc = 'D[i]m [E]nable',
+      },
+      {
+        '<leader>id',
+        function()
+          Snacks.dim.disable()
+        end,
+        desc = 'D[i]m [D]isable',
       },
     },
   },
