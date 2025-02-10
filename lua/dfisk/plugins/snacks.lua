@@ -64,6 +64,7 @@ return {
         },
       },
       dim = { enabled = true },
+      image = {},
       indent = { enabled = true },
       input = { enabled = true },
       notifier = { enabled = true },
