@@ -9,7 +9,7 @@ return { -- Useful plugin to show you pending keybinds.
     -- Document existing key chains
     -- v3 keybindings
     require('which-key').add {
-      { '<leader>a', group = '[A]erial LSP Symbols' },
+      -- { '<leader>a', group = '[A]erial LSP Symbols' },
       { '<leader>c', group = '[C]ode' },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>i', group = 'D[i]m' },

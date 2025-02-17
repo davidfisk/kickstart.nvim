@@ -71,6 +71,7 @@ return {
       picker = {
         enabled = true,
         ui_select = true,
+        formatters = { file = { truncate = 50 } },
       },
       quickfile = { enabled = true },
       scroll = { enabled = true },
@@ -300,6 +301,13 @@ return {
           Snacks.picker.diagnostics_buffer()
         end,
         desc = 'Buffer Diagnostics',
+      },
+      {
+        '<leader>sf',
+        function()
+          Snacks.picker.files()
+        end,
+        desc = 'File',
       },
       {
         '<leader>sh',
