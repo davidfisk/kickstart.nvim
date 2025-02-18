@@ -71,7 +71,7 @@ return {
       picker = {
         enabled = true,
         ui_select = true,
-        formatters = { file = { truncate = 50 } },
+        formatters = { file = { truncate = 70 } },
       },
       quickfile = { enabled = true },
       scroll = { enabled = true },
