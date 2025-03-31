@@ -3,7 +3,8 @@ return { -- Useful plugin to show you pending keybinds.
   event = 'VeryLazy',
   config = function() -- This is the function that runs, AFTER loading
     require('which-key').setup {
-      preset = 'helix',
+      -- preset = 'helix',
+      preset = 'modern',
     }
 
     -- Document existing key chains
