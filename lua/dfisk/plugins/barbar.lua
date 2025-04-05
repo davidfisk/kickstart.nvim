@@ -67,7 +67,7 @@ return {
     },
     ui = {
       icons = {
-        separator = { left = '|', right = '' },
+        separator = { left = ' |', right = '' },
       },
     },
     -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:

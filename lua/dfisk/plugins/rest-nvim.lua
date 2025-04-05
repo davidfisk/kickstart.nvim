@@ -1,6 +1,7 @@
+-- NOTE: disabled - replacing with hurl
 return {
   'rest-nvim/rest.nvim',
-  enabled = true,
+  enabled = false,
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'nvim-neotest/nvim-nio',
