@@ -1,5 +1,6 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
+  enabled = false,
   opts = {
     formatters_by_ft = {
       lua = { 'stylua', stop_after_first = true },

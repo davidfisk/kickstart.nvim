@@ -21,7 +21,7 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    snippets = { preset = 'luasnip' },
+    snippets = { preset = 'default' },
     -- 'default' for mappings similar to built-in completion
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -44,5 +44,4 @@ return {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
   },
-  opts_extend = { 'sources.default' },
 }

@@ -24,7 +24,6 @@ return { -- LSP Configuration & Plugins
     -- java (must be loaded before nvim-lspconfig so it is not in plugins dir)
     {
       'nvim-java/nvim-java',
-      lazy = true,
       opts = {
         lombok = {
           enable = true,
@@ -161,12 +160,12 @@ return { -- LSP Configuration & Plugins
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
       --
-      -- TODO disable jdtls formatting for now - reenable when I can
+      -- TODO: disable jdtls formatting for now - reenable when I can
       jdtls = {
         settings = {
           java = {
             format = {
-              enabled = true,
+              enabled = false,
             },
             tabSize = 4,
             insertSpaces = false,
@@ -177,6 +176,13 @@ return { -- LSP Configuration & Plugins
       phpactor = {},
       intelephense = {},
       clangd = {},
+      jsonls = {
+        settings = {
+          json = {
+            tabSize = 2,
+          },
+        },
+      },
       lua_ls = {
         -- cmd = {...},
         filetypes = { 'lua' },
@@ -225,6 +231,7 @@ return { -- LSP Configuration & Plugins
       'ts_ls', -- Used to format javascript
       -- 'vtsls',
       'biome',
+      'jsonls',
       'pylsp',
       'dockerls',
       'docker_compose_language_service',
