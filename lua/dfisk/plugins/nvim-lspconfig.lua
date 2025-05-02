@@ -165,10 +165,10 @@ return { -- LSP Configuration & Plugins
         settings = {
           java = {
             format = {
-              enabled = false,
+              enabled = true,
             },
             tabSize = 4,
-            insertSpaces = false,
+            insertSpaces = true,
           },
         },
       },

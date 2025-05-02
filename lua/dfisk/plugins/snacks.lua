@@ -29,7 +29,7 @@ return {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
-      animate = { enabled = true, duration = 20, easing = 'outInExpo' },
+      animate = { opts = { duration = 5, easing = 'linear', fps = 60 } },
       bigfile = { enabled = true },
       bufdelete = { enabled = true },
       dashboard = {
@@ -74,6 +74,15 @@ return {
         enabled = true,
         ui_select = true,
         formatters = { file = { truncate = 70 } },
+        win = {
+          -- input window
+          input = {
+            keys = {
+              ['<c-s>'] = { 'edit_split', mode = { 'i', 'n' } },
+              ['<c-v>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
+            },
+          },
+        },
       },
       quickfile = { enabled = true },
       scroll = { enabled = true },
