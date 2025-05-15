@@ -1,6 +1,6 @@
 return { -- AutoFormat on save
   'stevearc/conform.nvim',
-  enabled = true,
+  enabled = false,
   opts = {
     formatters_by_ft = {
       lua = { 'stylua', stop_after_first = true },
@@ -9,7 +9,7 @@ return { -- AutoFormat on save
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
     },
     format_on_save = {
       -- These options will be passed to conform.format()

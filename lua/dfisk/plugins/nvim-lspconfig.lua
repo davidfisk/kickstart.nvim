@@ -1,5 +1,6 @@
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
+  priority = 200, -- setting priority to nvim-java loads 1st
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     {
@@ -22,20 +23,12 @@ return { -- LSP Configuration & Plugins
     { 'folke/neodev.nvim', opts = {} },
 
     -- java (must be loaded before nvim-lspconfig so it is not in plugins dir)
-    {
-      'nvim-java/nvim-java',
-      opts = {
-        lombok = {
-          enable = true,
-        },
-        spring_boot_tools = {
-          enable = true,
-        },
-      },
-    },
+    -- {
+    --   'nvim-java/nvim-java',
+    -- },
     -- { 'danarth/sonarlint.nvim' },
     {
-      'williamboman/mason.nvim',
+      -- 'williamboman/mason.nvim',
       'mfussenegger/nvim-lint',
       'rshkarin/mason-nvim-lint',
     },
@@ -88,7 +81,6 @@ return { -- LSP Configuration & Plugins
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
-        -- TODO: why is this ugly?
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
         -- Opens a popup that displays documentation about the word under your cursor
@@ -97,7 +89,8 @@ return { -- LSP Configuration & Plugins
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        -- NOTE: replaced by SNACKS
+        -- map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -160,18 +153,20 @@ return { -- LSP Configuration & Plugins
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
       --
-      -- TODO: disable jdtls formatting for now - reenable when I can
-      jdtls = {
-        settings = {
-          java = {
-            format = {
-              enabled = true,
-            },
-            tabSize = 4,
-            insertSpaces = true,
-          },
-        },
-      },
+      -- TODO: disable jdtls formatting for now - it conflicts with nvim-java it seems and loads
+      -- jdtls inconsistently.. need to find a new way to set fomratting options in nvim-java
+      -- specifically
+      -- jdtls = {
+      --   settings = {
+      --     java = {
+      --       format = {
+      --         enabled = true,
+      --       },
+      --       tabSize = 4,
+      --       insertSpaces = true,
+      --     },
+      --   },
+      -- },
       ts_ls = {},
       phpactor = {},
       intelephense = {},
@@ -260,6 +255,7 @@ return { -- LSP Configuration & Plugins
       },
       ensure_installed = {},
       automatic_installation = {},
+      automatic_enable = {},
     }
     -- TODO: reenable sonarlint someday? seems slow
     -- require('sonarlint').setup {

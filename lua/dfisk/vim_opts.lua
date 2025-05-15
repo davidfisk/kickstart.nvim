@@ -85,3 +85,5 @@ vim.o.guicursor = table.concat({
 }, ',')
 
 vim.env.path = '/usr/bin:/opt/homebrew/bin'
+
+vim.o.winborder = 'rounded'

@@ -21,14 +21,7 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-      toggle = {
-        -- your toggle configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      },
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+      toggle = {},
       animate = { opts = { duration = 5, easing = 'linear', fps = 60 } },
       bigfile = { enabled = true },
       bufdelete = { enabled = true },
@@ -50,9 +43,10 @@ return {
           {
             section = 'terminal',
             -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1',
-            cmd = 'chafa ~/.config/nvim/landscape2.jpg',
-            height = 17,
-            padding = 1,
+            cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols ascii --size 60x14 --stretch; sleep .1',
+            -- cmd = 'chafa ~/.config/nvim/landscape2.jpg',
+            height = 14,
+            padding = 0,
           },
           {
             pane = 2,
@@ -475,6 +469,13 @@ return {
           Snacks.dim.disable()
         end,
         desc = 'D[i]m [D]isable',
+      },
+      {
+        '<leader>D',
+        function()
+          Snacks.dashboard.open()
+        end,
+        desc = '[D]asbhoard',
       },
     },
   },
