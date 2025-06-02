@@ -2,7 +2,7 @@ return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   opts = {
-    ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'javascript', 'typescript', 'php', 'http', 'cpp', 'rust' },
+    ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'javascript', 'typescript', 'php', 'http', 'cpp', 'rust', 'svelte' },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
@@ -10,7 +10,7 @@ return { -- Highlight, edit, and navigate code
       -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
       --  If you are experiencing weird indenting issues, add the language to
       --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-      additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript', 'pico8' },
+      additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript', 'svelte', 'pico8' },
     },
     indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8', 'java', 'lua' } },
   },

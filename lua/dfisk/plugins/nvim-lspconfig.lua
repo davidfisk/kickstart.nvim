@@ -171,6 +171,20 @@ return { -- LSP Configuration & Plugins
       phpactor = {},
       intelephense = {},
       clangd = {},
+      svelte = {
+        on_attach = function(client, bufnr)
+          if client.name == 'svelte' then
+            vim.api.nvim_create_autocmd('BufWritePost', {
+              pattern = { '*.js', '*.ts' },
+              group = vim.api.nvim_create_augroup('svelte_ondidchangetsorjsfile', { clear = true }),
+              callback = function(ctx)
+                -- Here use ctx.match instead of ctx.file
+                client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+              end,
+            })
+          end
+        end,
+      },
       jsonls = {
         settings = {
           json = {
@@ -238,6 +252,7 @@ return { -- LSP Configuration & Plugins
       'rust_analyzer',
       'prettier',
       'markdownlint',
+      'svelte',
       -- 'sonarlint-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }

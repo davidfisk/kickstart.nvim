@@ -4,12 +4,6 @@ return {
   'nvim-java/nvim-java',
   priority = 100,
   config = function()
-    require('java').setup {
-      -- temporarily call out version
-      jdtls = {
-        version = 'v1.46.1',
-      },
-    }
     require('lspconfig').jdtls.setup = {
       java = {
         format = {
