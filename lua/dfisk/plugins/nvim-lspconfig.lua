@@ -3,21 +3,22 @@ return { -- LSP Configuration & Plugins
   priority = 200, -- setting priority to nvim-java loads 1st
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
+    -- NOTE: version is pinned to 1 per https://github.com/nvim-java/nvim-java/issues/384
     {
-      'williamboman/mason.nvim',
+      'mason-org/mason.nvim',
+      version = '^1.0.0',
       opts = {
         ui = {
           border = 'rounded',
         },
       },
     },
-    'williamboman/mason-lspconfig.nvim',
+    { 'mason-org/mason-lspconfig.nvim', version = '^1.0.0' },
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
-
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
