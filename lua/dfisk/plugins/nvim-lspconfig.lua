@@ -6,14 +6,8 @@ return { -- LSP Configuration & Plugins
     -- NOTE: version is pinned to 1 per https://github.com/nvim-java/nvim-java/issues/384
     {
       'mason-org/mason.nvim',
-      version = '^1.0.0',
-      opts = {
-        ui = {
-          border = 'rounded',
-        },
-      },
     },
-    { 'mason-org/mason-lspconfig.nvim', version = '^1.0.0' },
+    { 'mason-org/mason-lspconfig.nvim' },
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
@@ -256,6 +250,8 @@ return { -- LSP Configuration & Plugins
       'svelte',
       'tailwindcss',
       'cmake-language-server',
+      'jdtls',
+      'vscode-spring-boot-tools',
       -- 'sonarlint-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
