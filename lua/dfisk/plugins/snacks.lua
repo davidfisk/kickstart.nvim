@@ -42,9 +42,9 @@ return {
         sections = {
           {
             section = 'terminal',
-            -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1',
-            cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols ascii --size 60x14 --stretch; sleep .1',
-            -- cmd = 'chafa ~/.config/nvim/landscape2.jpg',
+            cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols vhalf --size 60x17 --stretch',
+            -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols ascii --size 60x14 --stretch',
+            -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --size 60x14 --stretch',
             height = 14,
             padding = 0,
           },
@@ -138,14 +138,14 @@ return {
       {
         '<leader>fc',
         function()
-          Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
+          Snacks.picker.files { cwd = vim.fn.stdpath 'config', cmd = 'rg' }
         end,
         desc = 'Find Config File',
       },
       {
         '<leader>ff',
         function()
-          Snacks.picker.files()
+          Snacks.picker.files { cmd = 'rg' }
         end,
         desc = 'Find Files',
       },

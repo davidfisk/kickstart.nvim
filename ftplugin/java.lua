@@ -1,12 +1,3 @@
--- local mason_registry = require('mason-registry')
--- local lombok_jar = mason_registry.get_package("jdtls"):get_install_path() .. "/lombok.jar"
--- /Users/dfisk/.local/share/nvim/mason/packages/jdtls/lombok.jar
--- /Users/dfisk/.local/share/nvim/mason/share/jdtls/lombok.jar
--- local lombok_jar = vim.fn.exepath 'jdtls' .. '/lombok.jar'
--- vim.print(vim.fn.globpath("$MASON/share/java-debug-adapter", "*.jar", true, true))
-local lombok_jar = vim.fn.expand '$MASON/share/jdtls/lombok.jar'
-print('retrived lombok path: ' .. lombok_jar)
--- "--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand "$MASON/share/jdtls/lombok.jar"),
 local config = {
   cmd = {
     'jdtls',
@@ -27,7 +18,7 @@ local config = {
     },
     java = {
       format = {
-        enabled = true,
+        enabled = false,
       },
       tabSize = 4,
       insertSpaces = true,

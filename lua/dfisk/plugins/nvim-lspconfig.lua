@@ -252,6 +252,7 @@ return { -- LSP Configuration & Plugins
       'cmake-language-server',
       'jdtls',
       'vscode-spring-boot-tools',
+      'bashls',
       -- 'sonarlint-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
