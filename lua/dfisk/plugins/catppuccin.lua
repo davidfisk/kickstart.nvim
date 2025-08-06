@@ -23,6 +23,10 @@ return { -- You can easily change to a different colorscheme.
       no_italic = true,
       term_colors = true,
       transparent_background = true,
+      float = {
+        transparent = true,
+        solid = true,
+      },
       styles = {
         comments = {},
         conditionals = {},
