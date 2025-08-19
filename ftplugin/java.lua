@@ -1,9 +1,10 @@
+-- NOTE: disabled in favor of nvim-java
 local config = {
   cmd = {
     'jdtls',
     '--jvm-arg=' .. string.format('-javaagent:%s', vim.fn.expand '$MASON/share/jdtls/lombok.jar'),
   },
-  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
+  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw', 'pom.xml' }, { upward = true })[1]),
   settings = {
     runtimes = {
       -- determine runtime path on mac jenv with `jenv which 24`
@@ -18,7 +19,7 @@ local config = {
     },
     java = {
       format = {
-        enabled = false,
+        enabled = true, -- autoformat java
       },
       tabSize = 4,
       insertSpaces = true,
@@ -31,12 +32,12 @@ local config = {
       enabled = true,
     },
     signatureHelp = { enabled = true },
-    sources = {
-      organizeImports = {
-        starThreshold = 9999,
-        staticStarThreshold = 9999,
-      },
-    },
+    -- sources = {
+    --   organizeImports = {
+    --     starThreshold = 9999,
+    --     staticStarThreshold = 9999,
+    --   },
+    -- },
   },
 }
 require('jdtls').start_or_attach(config)
