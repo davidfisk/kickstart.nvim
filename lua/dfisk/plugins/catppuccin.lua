@@ -6,6 +6,7 @@ return { -- You can easily change to a different colorscheme.
   -- 'folke/tokyonight.nvim',
   -- 'sainnhe/gruvbox-material',
   'catppuccin/nvim',
+  enabled = false,
   name = 'catppucin',
   priority = 1000, -- Make sure to load this before all the other start plugins.
   init = function()
@@ -56,6 +57,18 @@ return { -- You can easily change to a different colorscheme.
         notify = true,
         snacks = true,
         which_key = true,
+        blink = true,
+        colorful_winsep = {
+          enabled = true,
+          color = 'sapphire',
+        },
+        mini = {
+          enable = true,
+        },
+        noice = true,
+        dap = true,
+        dap_ui = true,
+        lsp_trouble = true,
       },
     }
   end,

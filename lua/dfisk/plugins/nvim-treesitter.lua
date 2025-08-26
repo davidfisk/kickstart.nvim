@@ -12,7 +12,7 @@ return { -- Highlight, edit, and navigate code
       --  the list of additional_vim_regex_highlighting and disabled languages for indent.
       additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript', 'svelte', 'pico8' },
     },
-    indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8', 'java', 'lua' } },
+    indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8', 'java', 'lua', 'cpp' } },
   },
   config = function(_, opts)
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
