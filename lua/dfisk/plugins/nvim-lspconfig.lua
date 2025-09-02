@@ -189,7 +189,7 @@ return { -- LSP Configuration & Plugins
       },
       lua_ls = {
         -- cmd = {...},
-        filetypes = { 'lua' },
+        filetypes = { 'lua', 'p8' },
         -- capabilities = {},
         settings = {
           Lua = {

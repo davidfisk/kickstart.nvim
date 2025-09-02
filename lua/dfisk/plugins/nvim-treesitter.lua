@@ -10,9 +10,9 @@ return { -- Highlight, edit, and navigate code
       -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
       --  If you are experiencing weird indenting issues, add the language to
       --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-      additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript', 'svelte', 'pico8' },
+      additional_vim_regex_highlighting = { 'ruby', 'typescript', 'javascript', 'svelte' },
     },
-    indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'pico8', 'java', 'lua', 'cpp' } },
+    indent = { enable = true, disable = { 'ruby', 'typescript', 'javascript', 'java', 'lua', 'cpp' } },
   },
   config = function(_, opts)
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
