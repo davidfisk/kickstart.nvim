@@ -8,7 +8,8 @@ return {
   enabled = false,
   config = function()
     require('java').setup()
-    require('lspconfig').jdtls.setup = {
+    -- TODO: migrate to vim.lsp.config (https://xnacly.me/posts/2025/neovim-lsp-changes/)
+    vim.lsp.config('jdtls', {
       java = {
         format = {
           enabled = true,
@@ -16,7 +17,7 @@ return {
         tabSize = 4,
         insertSpaces = true,
       },
-    }
+    })
   end,
 }
 --

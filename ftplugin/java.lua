@@ -19,7 +19,7 @@ local config = {
     },
     java = {
       format = {
-        enabled = true, -- autoformat java
+        enabled = false, -- autoformat java
       },
       tabSize = 4,
       insertSpaces = true,
